@@ -18,7 +18,7 @@ module "vpc" {
   name = var.vpc_name
   cidr = var.vpc_cidr_block
 
-  azs             = data.aws_availability_zones.available.names
+  azs             = [data.aws_availability_zones.available.names[0]]
   private_subnets = slice(var.private_subnet_cidr_blocks, 0, var.private_subnet_value)
   public_subnets  = slice(var.public_subnet_cidr_blocks, 0, var.public_subnet_value)
 
@@ -33,6 +33,8 @@ module "ec2_instances" {
   depends_on = [module.vpc]
 
   instance_subnet_id = module.vpc.public_subnets[0]
+  vpc_id_instance    = module.vpc.vpc_id
+  vpc_cidr_block     = module.vpc.vpc_cidr_block
 
   instance_tags = var.tags
 

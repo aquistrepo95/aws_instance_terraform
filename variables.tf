@@ -48,13 +48,13 @@ variable "public_subnet_cidr_blocks" {
 variable "private_subnet_value" {
   description = "Number of private subnets to create."
   type        = number
-  default     = 3
+  default     = 1
 }
 
 variable "public_subnet_value" {
   description = "Number of public subnets to create."
   type        = number
-  default     = 3
+  default     = 1
 }
 
 variable "tags" {
