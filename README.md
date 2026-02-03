@@ -1,6 +1,6 @@
 # Terraform configuration for a single AWS EC2 instance with SSH enabled for remote access.
 
-## Functional Terraform infrastructure project running an aws instance(VM), VPC, security group, and remote access through ssh.
+## Functional Terraform infrastructure project running an AWS instance(VM), VPC, security group, and remote access through ssh.
 
 ## This project showcases the following concepts in Terraform:
 * Deploying a VPC on AWS.
@@ -24,4 +24,4 @@
   $ terrafrom validate
   $ terraform apply
   ```
-  NB: This may take a couple minutes to complete.  
+  NB: This may take a few minutes to complete.  
